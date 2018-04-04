@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/zhouli/ontologies/2017/7/untitled-ontology-210#"
+     xml:base="http://www.semanticweb.org/zhouli/ontologies/2017/7/untitled-ontology-210"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#actsUpon -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#actsUpon">
+        <owl:inverseOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#isHostOf"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Host"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasInput"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasOutput"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#isHostOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#isHostOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Host"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#performs -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#performs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#usesModel -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#usesModel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasModelPath -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasModelPath"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasRealization -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasRealization"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#hasUrl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Activity -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Activity">
+        <rdfs:comment>An activity defines a specific behavior of an agent.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#AggregationAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#AggregationAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Host -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Host">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#isHostOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A host represents the Knowledge Base (KB) that an agent acts upon.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#InputAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#InputAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>Agent that acquires user input, or sensor-sensed data, or data passed from an OutputAgent, and store it into the corresponding slot of an ontology</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Message -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Message">
+        <rdfs:comment>Message denotes the information communicated between two agents. This message must be facts that is expressed in the hosting knowledge base.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#ModelExecutorAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#ModelExecutorAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>An agent that act upon a node that represents a mathematical model, it knows the detailed steps for executing the model.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#NLPAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#NLPAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>An agent that takes a query sentence that is in natural language format from an InputAgent, convert the sentence into a machine readable form (in this case SPARQL syntax) by performing a natural language process, and pass the process outcome to a QueryAgent</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#OutputAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#OutputAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>An agent that extracts information from an ontology, and pass it to an InputAgent, or a VisualizationAgent</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#QueryAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#QueryAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>An agent that takes a query task from an NLPAgent, perform the query on the node that it acts upon, extract the required information from the OKB, and pass it to a VisualizationAgent. This process may require the agent to travel down and collect information from the sub-nodes if a user is querying detailed information of the subsystems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SimulationAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SimulationAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#actsUpon"/>
+                <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Host"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#performs"/>
+                <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#Activity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A SoftwareAgent is a software entity that can act autonomously (i.e., has a goal-driven behavior to achieve its objectives), that can adapt to its environment (i.e., react to changes in its environment), and that can communicate with other agents (i.e., have the capability to interact with other agents or even humans through user interfaces), in particular to support collaborative problem
+solving. (Kraines S, 2005)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#TaskDelegationAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#TaskDelegationAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>An agent that knows clearly what actions should be taken if the state of an object on the knowledge base changes, and delegate tasks to certain agents to complete the actions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#VisualizationAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#VisualizationAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>An agent that receives information from another agent and visualizes it on a user interface.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#WatcherAgent -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#WatcherAgent">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/JPS_Agent.owl#SoftwareAgent"/>
+        <rdfs:comment>An agent that watches the states of an object, for example, a slot on a knowledgebase, and triggers action of a TaskDelegatorAgent that acts upon the same node when the state of the watched object watched changes.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+

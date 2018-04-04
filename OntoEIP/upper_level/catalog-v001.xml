@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.theworldavatar.com/OntoEIP/upper_level/system_extended.owl" uri="http://www.theworldavatar.com/OntoEIP/upper_level/system_extended.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1506045782095" name="http://www.theworldavatar.com/OntoEIP/upper_level/network_system_extended.owl" uri="network_system_v1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1506045782095" name="http://www.theworldavatar.com/OntoEIP/upper_level/system_v1.owl" uri="system_v1.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1506045782095" name="http://www.theworldavatar.com/OntoEIP/upper_level/technical_system_v1.owl" uri="technical_system_v1.owl"/>
+    </group>
+</catalog>

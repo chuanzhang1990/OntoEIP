@@ -1,0 +1,1372 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#"
+     xml:base="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl"
+     xmlns:system="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/upper_level/system.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:coordinate_system="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/upper_level/coordinate_system.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:geometry="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/geometry/geometry.owl#">
+    <owl:Ontology rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl">
+        <owl:imports rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/SI_unit/derived_SI_units.owl"/>
+        <owl:imports rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/meta_model.owl"/>
+        <owl:imports rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/space_and_time/space_and_time.owl"/>
+        <owl:imports rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/geometry/geometry.owl"/>
+        <owl:imports rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/upper_level/coordinate_system.owl"/>
+        <owl:imports rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/SI_unit/SI_unit.owl"/>
+        <owl:imports rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/space_and_time/space_and_time_extended.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#bounding_Edge -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#bounding_Edge">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Face"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AggregatedWay"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Ferry"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Intersection"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Road"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#controls -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#controls">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLightController"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#directionOfTrafficFlow -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#directionOfTrafficFlow">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#DirrectionOfTrafficFlow"/>
+        <rdfs:comment>see DirectionOfTrafficFlow</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#hasDivider -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#hasDivider">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Divider"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#houseNumberRange -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#houseNumberRange">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressAreaBoundaryElement"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#isConnectedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#isConnectedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/topology/topology.owl#isConnectedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:comment>Define connection or the meeting between Road Feature</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#numberOfLanes -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#numberOfLanes">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#NumberOfLanes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurface -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurface">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadSurface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#serves -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#serves">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLight"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficSign"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Road"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at -->
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at">
+        <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#inter-objectRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#dividerType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#dividerType">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Divider"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>LegalDivider</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>PhysicalDivider;Crossable</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>PhysicalDivider;NotCrossable</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>The structure of the division of the RoadElement</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#dividerWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#dividerWidth">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Divider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The width of the division. 
+Stated in meters</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#enclosedTrafficAreaType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#enclosedTrafficAreaType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#EnclosedTrafficArea"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>AnotherType</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>ParkingBuilding</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>ParkingPlace</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>UnstructuredTrafficSquare</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>The type of the EnclosedTrafficArea</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#firstHouseNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#firstHouseNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#houseNumberStructure -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#houseNumberStructure">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Irregular</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>NoHouseNumber</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>RegularWithEvenNumbers</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>RegularWithOddAndEvenNumbers</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>RegularWithOddNumbers</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>The type of house numbering method that is applied to one side of a particular Road Element or to a particular Address Boundary Element</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#intermediateHouseNumbers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#intermediateHouseNumbers">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The main intention of intermediateHouseNumber is to add detail when the houseNumberStructure is irregular.
+It stores all the number of one side of the RoadElement/ Address Boundary Element between the first and the last house number</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#intermediate_coordinates -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#intermediate_coordinates">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>A space separated list of coordinates relative to the start-node, e.g. 12.23 45.23</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#junctionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#junctionType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>BorderCrossing</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>MiniRoundabout</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>RailwayCrossing</rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>The classification of a Junction</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#lanes -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#lanes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#NumberOfLanes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#lastHouseNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#lastHouseNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#official_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#official_Name">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Road"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The name assigned to any particular Feature by the Official organisation responsible for the existence and the maintenance of the Feature</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#paved -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#paved">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadSurface"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#postalCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#postalCode">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressArea"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressAreaBoundaryElement"/>
+                    <rdf:Description rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadGradient -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadGradient">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>The road gradient percentage value on the RoadElement
+The gradient shall be expressed in the form of percentage incline. Negative value describe downhill gradients, positive value describe uphill gradients
+Only the maximum gradient value at any posistion along the road need to be stored.
+Uphill and downhill should be defined relative to the orientation of the RoadElement when traveling from start to end point.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurfaceCondition -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurfaceCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadSurface"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Good</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Pure</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>An indication of the quality for transportation purposes of the surface of a RoadElement
+What is considered good and what pure shall be defined from the view point of car transportation</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurfaceType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurfaceType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadSurface"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Blocks</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Dirt</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>Flexible</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>Gravel</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                        <rdf:first>Paved</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                                <rdf:first>Rigid</rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#routeNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#routeNumber">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The routeNumber is the ID-number of a particular route in a given road network as attributed by a national, sub-national, or international organization</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#streetSide -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#streetSide">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>Left</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>Right</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>The side of a line in which an Attribute applies</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#trafficFlowDirection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#trafficFlowDirection">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#DirrectionOfTrafficFlow"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>BothDirections</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>NegativeDirection</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>NoDirection</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>PositiveDirection</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment>see DirectionOfTrafficFlow</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#width -->
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#width">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>The width of a Feature expressed in centimeters</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressArea -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressArea">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Face"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#bounding_Edge"/>
+                <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressAreaBoundaryElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An area or adresses that cannot be related to one or more RoadElement
+
+- In certain situasions adresses are defined in a square, that has a name that is different from the name of the roadElement representing the road network on that square
+-The adresses are defined according to building blocks. In these cases a building block has a name which differs from the name of an adjacent building block and of the Road Element which possibly divides the the two building blocks.
+- An adress area should always have a connection with the road network</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressAreaBoundaryElement -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AddressAreaBoundaryElement">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#houseNumberRange"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#Object"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An Adress Area Boundary Element describes the outer confinement of an Address Area. An Address Area Boundary Element is start and end bounded with the road network.
+At least one of the edges defining the complete boundary of An Adress Area has also to be refferenced by a Road Element which is connected to the rest of the road network.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AggregatedWay -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#AggregatedWay">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Aqueduct -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Aqueduct">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Bridge -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Bridge">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ComplexPedestrianCrossing -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ComplexPedestrianCrossing">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#CompositeAttributes -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#CompositeAttributes">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Cutting -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Cutting">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#DirrectionOfTrafficFlow -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#DirrectionOfTrafficFlow">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#CompositeAttributes"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#trafficFlowDirection"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The dirrection(s) of traffic flow allowed on a Feature</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Divider -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Divider">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#CompositeAttributes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Geometric"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#EnclosedTrafficArea -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#EnclosedTrafficArea">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Face"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TransferPoint"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#bounding_Edge"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#EnclosedTrafficAreaBoundary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#enclosedTrafficAreaType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#EnclosedTrafficAreaBoundary -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#EnclosedTrafficAreaBoundary">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>It works the same as Address Area Boundary Element
+An Enclosed Traffic Area Boundary describes the outer confinement of an Enclosed Traffic Area. An Enclosed Traffic is start and end bounded with road network.
+At least one of the edges defining the complete boundary of an Enclosed Traffic has alaso to be refferenced by a Road Element which is connected to the rest of the road network.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Face -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Face">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Geometric"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#bounding_Edge"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#bounding_Edge"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Feature -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Ferry -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Ferry">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#FerryConnection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#FerryConnection -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#FerryConnection">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Gallery -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Gallery">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Geometric -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Geometric">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#HouseNumberRange">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#CompositeAttributes"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#firstHouseNumber"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#houseNumberStructure"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#intermediate_coordinates"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#lastHouseNumber"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#streetSide"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The set of house numbers that is related to one side of a particular road element or to a particular Address Area Boundary Element.
+It is comma separated list of numbers from the first to the last house number of the element, excluding the first and last number.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Interchange -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Interchange">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Intersection -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Intersection">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TransferPoint"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The Level 2 representation of a crossing which bounds a Road or a Ferry. It is a Complex Feature composed of one or more Level 1 Junctions, Road Elements, and Enclosed Traffic Areas.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TransferPoint"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#junctionType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A feature that bounds a Road Element or a Ferry Connection. A Road Element or Ferry Connection always forms a connection between two Junctions, and a Road Elements or Ferry Connection is always bounded by exactly 2 Junctions. 
+A Junction feature represents the physical Connection between its adjoining Road Elements and Ferry Connections.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Lighting -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Lighting">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#MeasurementDevice -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#MeasurementDevice">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Node">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Geometric"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/upper_level/coordinate_system.owl#hasCoordinate"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/upper_level/coordinate_system.owl#Coordinate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#NumberOfLanes -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#NumberOfLanes">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#CompositeAttributes"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#lanes"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The NumberOfLanes refers to the total number of lanes associated with one particular driving direction which are present on a certain Road Element.
+If this attributes appears once with one Road Element without side indication, it indacates that both driving directions have the same number of lanes or, in a case there is only one driving direction, the total number of Lanes.
+In case two different driving directions on a Road Element have different number of lanes, each number can be specified by a different Attribute Value in combination with side</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Pathway -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Pathway">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#PedestrianCrossing -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#PedestrianCrossing">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RetainingWall -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RetainingWall">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Road -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Road">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TransferPoint"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/geometry/geometry.owl#has_length"/>
+                <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/OntoCAPE/OntoCAPE/supporting_concepts/geometry/geometry.owl#EdgeLength"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Intersection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Intersection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#intermediate_coordinates"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Feature"/>
+        <rdfs:comment>The Road Network is seen here primarily from the viewpoint of transportation and traffic. Ferry Connections are therefore placed together with road network elements in one theme</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Edge"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TransferPoint"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#ends_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#starts_at"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Junction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#official_Name"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadGradient"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#width"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A linear section of the earth which is designed for or the result of vehicular movement.  It serves as the smallest unit of the road network at Level 1 that is independent and having a Junction at each end.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadMarking -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadMarking">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadSurface -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadSurface">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#CompositeAttributes"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#paved"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurfaceCondition"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#roadSurfaceType"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Roundabout -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Roundabout">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadAndFerryFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadElement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#contains"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Signpost -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Signpost">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLight -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLight">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#serves"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLightController -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLightController">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#controls"/>
+                <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficLight"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#controls"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficSign -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TrafficSign">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#RoadFurniture"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#serves"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TransferPoint -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#TransferPoint">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoCAPE/meta_model/fundamental_concepts/fundamental_concepts.owl#Object"/>
+        <rdfs:comment>This will be the typical place where one can change transport mode or access a feature in a multi-modal environment, e.g. stations, airports, or car parks</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Tunnel -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Tunnel">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Viaduct -->
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Viaduct">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/OntoEIP/TransportationNetwork.owl#Structure"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
